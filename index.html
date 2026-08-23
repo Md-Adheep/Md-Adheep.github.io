@@ -133,7 +133,6 @@ section{padding:7rem 3.5rem}
 #projects{background:var(--bg2)}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3.5rem}
 .pc{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.7rem;position:relative;overflow:hidden;transition:all .25s}
-.pc.feat{grid-column:span 3;border-color:rgba(0,229,255,.18)}
 .pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:scaleX(0);transition:transform .35s}
 .pc:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.38)}.pc:hover::after{transform:scaleX(1)}
 .ph{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.9rem}
@@ -141,10 +140,6 @@ section{padding:7rem 3.5rem}
 .pbadge{font-size:.58rem;letter-spacing:.08em;padding:.22rem .6rem;border-radius:2px}
 .pn{font-family:var(--font-d);font-size:.98rem;font-weight:700;margin-bottom:.45rem;line-height:1.2}
 .pd{font-size:.73rem;color:var(--muted);line-height:1.75;margin-bottom:.9rem}
-.pipe{display:flex;align-items:center;gap:3px;margin-bottom:.9rem;flex-wrap:wrap}
-.ps{display:flex;align-items:center;gap:3px;flex-shrink:0}
-.pb{font-size:.56rem;padding:.18rem .48rem;border-radius:2px;letter-spacing:.04em;white-space:nowrap}
-.pa{color:var(--muted);font-size:.62rem}
 .pstack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
 .stag{font-size:.58rem;padding:.18rem .55rem;border-radius:2px;background:var(--surface2);color:rgba(232,234,240,.45);border:1px solid var(--border)}
 .pbuls{list-style:none;margin-bottom:.9rem}
@@ -204,7 +199,7 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
   #hero{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;gap:2rem}.hero-r{display:none}
   section{padding:5rem 1.5rem}
   .ag{grid-template-columns:1fr}
-  .pg{grid-template-columns:1fr}.pc.feat{grid-column:span 1}
+  .pg{grid-template-columns:1fr}
   footer{flex-direction:column;gap:.5rem;text-align:center}
   .h-stats{flex-wrap:wrap;gap:1.5rem}
 }
@@ -367,85 +362,8 @@ footer{padding:1.65rem 3.5rem;border-top:1px solid var(--border);display:flex;ju
 <section id="projects">
   <div class="eye">03 / Projects</div>
   <h2 class="sec-t reveal">Featured Work</h2>
-  <p class="sec-s reveal">Production systems and personal projects showcasing DevOps, cloud, and security skills.</p>
+  <p class="sec-s reveal">Personal projects showcasing CI/CD, Infrastructure-as-Code, container orchestration, and observability.</p>
   <div class="pg">
-
-    <!-- PROJECT 1 - NextGen LMS -->
-    <div class="pc feat reveal">
-      <div class="ph">
-        <div class="pic">🎓</div>
-        <span class="pbadge" style="background:rgba(57,255,20,.07);color:#39ff14;border:1px solid rgba(57,255,20,.15)">⭐ Production · Mar 2026</span>
-      </div>
-      <div class="pn">NextGen LMS — CI/CD Automated Deployment</div>
-      <div class="pd">End-to-end GitHub Actions CI/CD for a live Learning Management System — automated builds, deployments, and server management on Linux + Plesk across dev and production environments.</div>
-      <div class="pipe">
-        <div class="ps"><div class="pb" style="background:rgba(167,139,250,.1);color:#a78bfa;border:1px solid rgba(167,139,250,.2)">GitHub</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(0,229,255,.1);color:#00e5ff;border:1px solid rgba(0,229,255,.2)">GH Actions</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2)">Docker</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(255,149,0,.1);color:#ff9500;border:1px solid rgba(255,149,0,.2)">Plesk/Linux</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(13,183,237,.1);color:#0db7ed;border:1px solid rgba(13,183,237,.2)">Nginx</div><div class="pa">→</div></div>
-        <div class="ps"><div class="pb" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2)">Deploy 🚀</div></div>
-      </div>
-      <ul class="pbuls">
-        <li>Designed and maintained GitHub Actions workflows for automated build, test, and deployment across dev and production</li>
-        <li>Managed Linux and Plesk-hosted servers, ensuring application availability and deployment reliability</li>
-        <li>Automated frontend and backend deployments, reducing manual release effort and improving consistency</li>
-        <li>Monitored build pipelines, investigated failures, and resolved production issues to minimize downtime</li>
-        <li>Collaborated with development teams on branching strategies, release workflows, and environment management</li>
-        <li>Performed server health monitoring, log analysis, and troubleshooting for stable application performance</li>
-      </ul>
-      <div class="plinks">
-        <a href="https://nextgentechnologies.org" target="_blank" class="plink primary">🌐 nextgentechnologies.org</a>
-        <a href="https://portal.nextgentechnologies.org" target="_blank" class="plink">⚙ portal.nextgentechnologies.org</a>
-      </div>
-      <div class="pstack">
-        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub Actions</span>
-        <span class="stag" style="color:#0db7ed;border-color:rgba(13,183,237,.15)">Docker</span>
-        <span class="stag" style="color:#39ff14;border-color:rgba(57,255,20,.15)">MySQL</span>
-        <span class="stag" style="color:#00e5ff;border-color:rgba(0,229,255,.15)">Nginx</span>
-        <span class="stag">Linux</span>
-        <span class="stag">Plesk</span>
-        <span class="stag">CI/CD</span>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 - OfficeTime HRMS -->
-    <div class="pc reveal" style="grid-column:span 2">
-      <div class="ph">
-        <div class="pic" style="background:rgba(255,149,0,.08);border-color:rgba(255,149,0,.15)">🏢</div>
-        <span class="pbadge" style="background:rgba(255,149,0,.07);color:#ff9500;border:1px solid rgba(255,149,0,.15)">Production · May 2026</span>
-      </div>
-      <div class="pn">OfficeTime HRMS — DevOps &amp; Infra Management</div>
-      <div class="pd">Full DevOps ownership of a production HRMS SaaS — CI/CD pipelines, AWS infrastructure, GitHub repo management, and automated deployments across dev and production.</div>
-      <div style="display:flex;align-items:center;gap:3px;margin-bottom:.9rem;font-size:.58rem;flex-wrap:wrap">
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(167,139,250,.09);color:#a78bfa;border:1px solid rgba(167,139,250,.18)">GitHub</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(0,229,255,.09);color:#00e5ff;border:1px solid rgba(0,229,255,.18)">GH Actions</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(255,149,0,.09);color:#ff9500;border:1px solid rgba(255,149,0,.18)">AWS EC2</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(57,255,20,.08);color:#39ff14;border:1px solid rgba(57,255,20,.18)">DynamoDB</div>
-        <span style="color:#374151">→</span>
-        <div style="padding:.2rem .5rem;border-radius:2px;background:rgba(13,183,237,.08);color:#0db7ed;border:1px solid rgba(13,183,237,.18)">Nginx/Plesk</div>
-      </div>
-      <ul class="pbuls">
-        <li>Managed CI/CD pipelines using GitHub Actions for development and production HRMS deployments</li>
-        <li>Handled GitHub repository management, version control, and deployment processes for smooth application releases</li>
-        <li>Automated deployment workflows to reduce manual work and improve release efficiency</li>
-        <li>Worked closely with developers to maintain application stability and support continuous delivery</li>
-      </ul>
-      <div class="plinks">
-        <a href="https://officetime.io" target="_blank" class="plink primary">🌐 officetime.io</a>
-        <a href="https://hrms.officetime.io" target="_blank" class="plink">⚙ hrms.officetime.io</a>
-      </div>
-      <div class="pstack">
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">AWS EC2</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">DynamoDB</span>
-        <span class="stag" style="color:#ff9500;border-color:rgba(255,149,0,.18)">IAM</span>
-        <span class="stag" style="color:#a78bfa;border-color:rgba(167,139,250,.15)">GitHub Actions</span>
-        <span class="stag">Linux</span><span class="stag">Plesk</span><span class="stag">Nginx</span><span class="stag">CI/CD</span>
-      </div>
-    </div>
 
     <!-- PROJECT 3 - K8s CI/CD -->
     <div class="pc reveal">
