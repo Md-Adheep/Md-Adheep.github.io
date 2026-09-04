@@ -987,6 +987,192 @@
     }
 
     /* =========================================
+       ALL PROJECTS SECTION
+       ========================================= */
+    #all-projects {
+      background: var(--body-bg);
+      margin-bottom: 2.5rem;
+    }
+
+    .proj-terminal {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0b1329;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #38bdf8;
+      margin: 0.75rem 0 2rem;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .proj-terminal::before {
+      content: '$';
+      color: #64748b;
+    }
+
+    .proj-terminal-cursor {
+      display: inline-block;
+      width: 7px;
+      height: 1em;
+      background: #38bdf8;
+      margin-left: 2px;
+      animation: projBlink 0.9s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes projBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .proj-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .proj-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .proj-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .proj-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    [data-theme="dark"] .proj-icon-box {
+      background: rgba(37, 99, 235, 0.15);
+    }
+
+    .live-dot-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-full);
+    }
+
+    .live-dot-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 6px #10b981;
+      animation: projBlink 1.6s infinite;
+    }
+
+    .proj-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .proj-card-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .proj-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .proj-bullets li {
+      font-size: 0.76rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .proj-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    .proj-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.25rem;
+    }
+
+    .proj-link-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .proj-link-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .proj-link-chip.primary {
+      background: var(--primary-light);
+      border-color: var(--primary-border);
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .proj-link-chip.primary {
+      background: rgba(37, 99, 235, 0.15);
+      border-color: rgba(37, 99, 235, 0.3);
+      color: #93c5fd;
+    }
+
+    /* =========================================
        ROW 3: ARCHITECTURE DIAGRAM & CASE STUDY
        ========================================= */
     .arch-panel {
@@ -1706,9 +1892,9 @@
 
           <!-- Social Icons -->
           <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/mohamed-adeep-devops/" target="_blank" rel="noopener noreferrer" class="hero-social-link" title="LinkedIn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 1 0 0 3.32 1.66 1.66 0 0 0 0-3.32Z"/>
+            <a href="tel:7904890057" class="hero-social-link" title="Phone">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </a>
 
@@ -2081,7 +2267,7 @@
       </div>
 
       <!-- Right: Featured Project -->
-      <div id="projects">
+      <div>
         <h2 class="section-title">Featured Project</h2>
         <div class="featured-project-card">
           
@@ -2150,6 +2336,135 @@
       </div>
 
     </div>
+
+    <!-- ALL PROJECTS -->
+    <section id="all-projects">
+      <div id="projects"></div>
+      <h2 class="section-title">My Projects</h2>
+      <p class="proj-terminal"><span id="projTypewriter"></span><span class="proj-terminal-cursor"></span></p>
+
+      <div class="proj-grid">
+
+        <!-- Project 1: NextGen LMS -->
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <div class="proj-icon-box">🎓</div>
+            <span class="live-dot-badge">LIVE</span>
+          </div>
+          <div class="proj-card-title">NextGen LMS — CI/CD Automated Deployment</div>
+          <p class="proj-card-desc">End-to-end GitHub Actions CI/CD for a live Learning Management System — automated builds, deployments, and server management on Linux + Plesk across dev and production environments.</p>
+          <ul class="proj-bullets">
+            <li>Designed and maintained GitHub Actions workflows for automated build, test, and deployment across dev and production.</li>
+            <li>Managed Linux and Plesk-hosted servers, ensuring application availability and deployment reliability.</li>
+            <li>Monitored build pipelines, investigated failures, and resolved production issues to minimize downtime.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="proj-tag">GitHub Actions</span>
+            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Nginx</span>
+            <span class="proj-tag">Plesk/Linux</span>
+          </div>
+          <div class="proj-links-row">
+            <a href="https://nextgentechnologies.org" target="_blank" rel="noopener noreferrer" class="proj-link-chip primary">🌐 nextgentechnologies.org</a>
+            <a href="https://portal.nextgentechnologies.org" target="_blank" rel="noopener noreferrer" class="proj-link-chip">⚙ portal.nextgentechnologies.org</a>
+          </div>
+        </div>
+
+        <!-- Project 2: OfficeTime HRMS -->
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <div class="proj-icon-box">🏢</div>
+            <span class="live-dot-badge">LIVE</span>
+          </div>
+          <div class="proj-card-title">OfficeTime HRMS — DevOps &amp; Infra Management</div>
+          <p class="proj-card-desc">Full DevOps ownership of a production HRMS SaaS — CI/CD pipelines, AWS infrastructure, GitHub repo management, and automated deployments across dev and production.</p>
+          <ul class="proj-bullets">
+            <li>Managed CI/CD pipelines using GitHub Actions for development and production HRMS deployments.</li>
+            <li>Handled GitHub repository management, version control, and deployment processes for smooth releases.</li>
+            <li>Worked closely with developers to maintain application stability and support continuous delivery.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="proj-tag">AWS EC2</span>
+            <span class="proj-tag">DynamoDB</span>
+            <span class="proj-tag">GitHub Actions</span>
+            <span class="proj-tag">Nginx/Plesk</span>
+          </div>
+          <div class="proj-links-row">
+            <a href="https://officetime.io" target="_blank" rel="noopener noreferrer" class="proj-link-chip primary">🌐 officetime.io</a>
+            <a href="https://hrms.officetime.io" target="_blank" rel="noopener noreferrer" class="proj-link-chip">⚙ hrms.officetime.io</a>
+          </div>
+        </div>
+
+        <!-- Project 3: K8s CI/CD -->
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <div class="proj-icon-box">⚙️</div>
+          </div>
+          <div class="proj-card-title">CI/CD Pipeline with Containerized Deployment on Kubernetes</div>
+          <p class="proj-card-desc">End-to-end CI/CD pipeline: GitHub Actions builds and pushes Docker images, deployed to Kubernetes with Nginx Ingress and zero-downtime rolling updates.</p>
+          <ul class="proj-bullets">
+            <li>GitHub Actions automatically builds, tests, and pushes Docker images on every commit.</li>
+            <li>Deployed to Kubernetes with Deployments, Services, and Nginx-based Ingress.</li>
+            <li>Rolling updates with readiness/liveness probes for zero-downtime releases.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="proj-tag">GitHub Actions</span>
+            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Kubernetes</span>
+            <span class="proj-tag">AWS</span>
+          </div>
+          <div class="proj-links-row">
+            <a href="https://github.com/Md-Adheep" target="_blank" rel="noopener noreferrer" class="proj-link-chip">GitHub Repo</a>
+          </div>
+        </div>
+
+        <!-- Project 4: Terraform IaC -->
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <div class="proj-icon-box">🏗️</div>
+          </div>
+          <div class="proj-card-title">Infrastructure as Code — AWS Environment Provisioning</div>
+          <p class="proj-card-desc">Modular Terraform configurations provisioning a complete AWS environment, with Ansible handling post-provisioning configuration.</p>
+          <ul class="proj-bullets">
+            <li>Modular Terraform provisions VPC, subnets, EC2, RDS, and IAM roles from version-controlled code.</li>
+            <li>Terraform remote state and workspaces manage dev, staging, and prod consistently.</li>
+            <li>Least-privilege IAM policies and security groups harden the infrastructure.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="proj-tag">Terraform</span>
+            <span class="proj-tag">Ansible</span>
+            <span class="proj-tag">AWS</span>
+          </div>
+          <div class="proj-links-row">
+            <a href="https://github.com/Md-Adheep" target="_blank" rel="noopener noreferrer" class="proj-link-chip">GitHub Repo</a>
+          </div>
+        </div>
+
+        <!-- Project 5: K8s Monitoring -->
+        <div class="proj-card">
+          <div class="proj-card-top">
+            <div class="proj-icon-box">📊</div>
+          </div>
+          <div class="proj-card-title">Kubernetes Monitoring &amp; Observability Stack</div>
+          <p class="proj-card-desc">Prometheus and Grafana deployed on Kubernetes for real-time node, pod, and application-level metrics with custom dashboards and alerting.</p>
+          <ul class="proj-bullets">
+            <li>Prometheus + Grafana monitor node, pod, and app-level metrics in real time.</li>
+            <li>Custom dashboards visualize CPU, memory, request latency, and error rates.</li>
+            <li>Prometheus alerting rules proactively flag resource exhaustion and degradation.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="proj-tag">Kubernetes</span>
+            <span class="proj-tag">Prometheus</span>
+            <span class="proj-tag">Grafana</span>
+            <span class="proj-tag">AWS</span>
+          </div>
+          <div class="proj-links-row">
+            <a href="https://github.com/Md-Adheep" target="_blank" rel="noopener noreferrer" class="proj-link-chip">GitHub Repo</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ROW 3: ARCHITECTURE DIAGRAM & CASE STUDY -->
     <div class="section-row" id="case-studies">
@@ -2429,11 +2744,11 @@
               <span>mohamedadeep005@gmail.com</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/mohamed-adeep-devops/" target="_blank" rel="noopener noreferrer" class="connect-item">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 1 0 0 3.32 1.66 1.66 0 0 0 0-3.32Z"/>
+            <a href="tel:7904890057" class="connect-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
-              <span>linkedin.com/in/mohamed-adeep-devops</span>
+              <span>7904890057</span>
             </a>
 
             <a href="https://github.com/Md-Adheep" target="_blank" rel="noopener noreferrer" class="connect-item">
@@ -2496,9 +2811,9 @@
       <!-- Socials & Copyright -->
       <div class="footer-right">
         <div class="footer-socials">
-          <a href="https://www.linkedin.com/in/mohamed-adeep-devops/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.66 1.66 0 1 0 0 3.32 1.66 1.66 0 0 0 0-3.32Z"/>
+          <a href="tel:7904890057" class="footer-social-icon" title="Phone">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
           </a>
           <a href="https://github.com/Md-Adheep" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="GitHub">
@@ -2756,6 +3071,35 @@
       }
       modal.classList.add('active');
     }
+
+    // PROJECTS TERMINAL TYPEWRITER
+    const projLines = [
+      'git push origin main → deploy triggered',
+      'github-actions: pipeline ✓ passed',
+      'aws ec2 describe-instances --region ap-south-1',
+      'docker build -t adeep/app . && docker push',
+      'kubectl apply -f k8s/deployment.yaml',
+      'terraform apply -auto-approve',
+      'helm upgrade --install app ./chart'
+    ];
+    (function typeProjLine() {
+      const el = document.getElementById('projTypewriter');
+      if (!el) return;
+      let li = 0, ci = 0, deleting = false;
+      function step() {
+        const line = projLines[li];
+        if (!deleting) {
+          el.textContent = line.slice(0, ++ci);
+          if (ci === line.length) { deleting = true; setTimeout(step, 1800); return; }
+          setTimeout(step, 45);
+        } else {
+          el.textContent = line.slice(0, --ci);
+          if (ci === 0) { deleting = false; li = (li + 1) % projLines.length; setTimeout(step, 350); return; }
+          setTimeout(step, 20);
+        }
+      }
+      step();
+    })();
 
     function closeAllModals() {
       document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
